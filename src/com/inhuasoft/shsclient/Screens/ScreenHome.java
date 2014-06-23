@@ -20,7 +20,6 @@
 package com.inhuasoft.shsclient.Screens;
 
 
-
 import com.inhuasoft.shsclient.CustomDialog;
 import com.inhuasoft.shsclient.Main;
 import com.inhuasoft.shsclient.R;
@@ -33,6 +32,8 @@ import org.doubango.ngn.sip.NgnSipSession.ConnectionState;
 import org.doubango.ngn.utils.NgnConfigurationEntry;
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -46,16 +47,37 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.AdapterView.OnItemClickListener;
 
 
-public class ScreenHome extends BaseScreen {
+public class ScreenHome extends BaseScreen  implements OnClickListener{
 	private static String TAG = ScreenHome.class.getCanonicalName();
+	
+	
+	private LinearLayout mHomeLayout;
+	private LinearLayout mVideoLayout;
+	private LinearLayout mSwitchLayout;
+	private LinearLayout mControlLayout;
+	private LinearLayout mMoreLayout;
+	private ImageView mVideoImageView;
+	private ImageView mHomeImageView;
+	private TextView mVideoTextView;
+	private TextView mHomeTextView;
+
+	private FragmentManager mFragmentManager;
+
+	private HomeFragment mHomeFragment;
+	private VideoFragment mVideoFragment;
+	private TwowayVideoFragment mTwowayVideoFragment;
+	
+	
 	
 	private static final int MENU_EXIT = 0;
 	private static final int MENU_SETTINGS = 1;
@@ -89,16 +111,40 @@ public class ScreenHome extends BaseScreen {
 		}
 	}
 
+	private void initViews() {
+		// TODO Auto-generated method stub
+		mHomeLayout = (LinearLayout) findViewById(R.id.home_layout);
+		mHomeLayout.setOnClickListener(this);
+		mVideoLayout = (LinearLayout) findViewById(R.id.video_layout);
+		mVideoLayout.setOnClickListener(this);
+		mSwitchLayout = (LinearLayout) findViewById(R.id.switch_layout);
+		mSwitchLayout.setOnClickListener(this);
+		mControlLayout = (LinearLayout) findViewById(R.id.control_layout);
+		mControlLayout.setOnClickListener(this);
+		mMoreLayout = (LinearLayout) findViewById(R.id.more_layout);
+		mMoreLayout.setOnClickListener(this);
+		
+		mVideoImageView = (ImageView) findViewById(R.id.video_image);
+		mVideoTextView = (TextView) findViewById(R.id.video_text);
+		
+		mHomeImageView = (ImageView) findViewById(R.id.home_image);
+		mHomeTextView = (TextView) findViewById(R.id.home_text);
+
+	}
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.screen_home);
+		setContentView(R.layout.activity_home);
+		
+        mFragmentManager = getFragmentManager();
+		setTabSelection(0);
 		
 		SipLoginThread sip_login_thread = new SipLoginThread();
 		sip_login_thread.start();
 		
-		mGridView = (GridView) findViewById(R.id.screen_home_gridview);
+		
+		/*mGridView = (GridView) findViewById(R.id.screen_home_gridview);
 		mGridView.setAdapter(new ScreenHomeAdapter(this));
 		mGridView.setOnItemClickListener(new OnItemClickListener() {
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -151,7 +197,7 @@ public class ScreenHome extends BaseScreen {
 					}
 				}
 			}
-		});
+		});*/
 		
 		mSipBroadCastRecv = new BroadcastReceiver() {
 			@Override
@@ -173,7 +219,7 @@ public class ScreenHome extends BaseScreen {
 						case UNREGISTRATION_INPROGRESS:
 						case UNREGISTRATION_NOK:
 						default:
-							((ScreenHomeAdapter)mGridView.getAdapter()).refresh();
+						//	((ScreenHomeAdapter)mGridView.getAdapter()).refresh();
 							break;
 					}
 				}
@@ -184,6 +230,83 @@ public class ScreenHome extends BaseScreen {
 	    registerReceiver(mSipBroadCastRecv, intentFilter);
 	}
 
+	@Override
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+		switch (v.getId()) {
+		case R.id.home_layout:
+			setTabSelection(0);
+			break;
+		case R.id.video_layout:
+			setTabSelection(1);
+			break;
+		case R.id.switch_layout:
+
+			break;
+		case R.id.control_layout:
+
+			break;
+		case R.id.more_layout:
+
+			break;
+
+		default:
+			break;
+		}
+	}
+	
+	
+	
+	public void setTabSelection(int index) {
+		// TODO Auto-generated method stub
+		// 每次选中之前先清楚掉上次的选中状态
+		// 开启一个Fragment事务
+		FragmentTransaction transaction = mFragmentManager.beginTransaction();
+		// 先隐藏掉所有的Fragment，以防止有多个Fragment显示在界面上的情况
+		hideFragments(transaction);
+		
+		switch (index) {
+		case 0:
+			clearSelection();
+			mHomeLayout.setBackgroundResource(R.drawable.ic_home_bottom_bar_bg);
+			mHomeImageView.setSelected(true);
+			mHomeTextView.setTextColor(getTextColor(R.color.orange));
+			if(mHomeFragment == null) {
+				mHomeFragment = new HomeFragment();
+				transaction.add(R.id.main_content, mHomeFragment);
+			} else {
+				transaction.show(mHomeFragment);
+			}
+			break;
+		case 1:
+			clearSelection();
+			mVideoLayout.setBackgroundResource(R.drawable.ic_home_bottom_bar_bg);
+			mVideoImageView.setSelected(true);
+			mVideoTextView.setTextColor(getTextColor(R.color.orange));
+			if(mVideoFragment == null) {
+				mVideoFragment = new VideoFragment();
+				transaction.add(R.id.main_content, mVideoFragment);
+			} else {
+				transaction.show(mVideoFragment);
+			}
+			break;
+		case 7:
+			if(mTwowayVideoFragment == null) {
+				mTwowayVideoFragment = new TwowayVideoFragment();
+				transaction.add(R.id.main_content, mTwowayVideoFragment);
+			} else {
+				transaction.show(mTwowayVideoFragment);
+			}
+			break;
+
+		default:
+			break;
+		}
+		transaction.commit();
+	}
+
+	
+	
 	@Override
 	protected void onDestroy() {
        if(mSipBroadCastRecv != null){
@@ -221,9 +344,44 @@ public class ScreenHome extends BaseScreen {
 	}
 	
 	
+	
+	private int getTextColor(int id) {
+		// TODO Auto-generated method stub
+		return getResources().getColor(id);
+	}
+
+	private void clearSelection() {
+		// TODO Auto-generated method stub
+		mHomeLayout.setBackgroundDrawable(null);
+		mHomeImageView.setSelected(false);
+		mVideoImageView.setSelected(false);
+		mHomeTextView.setTextColor(getResources().getColor(R.color.black));
+		mVideoTextView.setTextColor(getResources().getColor(R.color.black));
+		mVideoLayout.setBackgroundDrawable(null);
+		mSwitchLayout.setBackgroundDrawable(null);
+		mControlLayout.setBackgroundDrawable(null);
+		mMoreLayout.setBackgroundDrawable(null);
+	}
+
 	/**
-	 * ScreenHomeItem
+	 * 将所有的Fragment都置为隐藏状态。
+	 * 
+	 * @param transaction
+	 *            用于对Fragment执行操作的事务
 	 */
+	private void hideFragments(FragmentTransaction transaction) {
+		if (mVideoFragment != null) {
+			transaction.hide(mVideoFragment);
+		}
+		if (mHomeFragment != null) {
+			transaction.hide(mHomeFragment);
+		}
+	}
+	
+	
+/*	*//**
+	 * ScreenHomeItem
+	 *//*
 	static class ScreenHomeItem {
 		static final int ITEM_SIGNIN_SIGNOUT_POS = 0;
 		static final int ITEM_EXIT_POS = 1;
@@ -238,9 +396,9 @@ public class ScreenHome extends BaseScreen {
 		}
 	}
 	
-	/**
+	*//**
 	 * ScreenHomeAdapter
-	 */
+	 *//*
 	static class ScreenHomeAdapter extends BaseAdapter{
 		static final int ALWAYS_VISIBLE_ITEMS_COUNT = 3;
 		static final ScreenHomeItem[] sItems =  new ScreenHomeItem[]{
@@ -322,5 +480,5 @@ public class ScreenHome extends BaseScreen {
 			return view;
 		}
 		
-	}
+	}*/
 }

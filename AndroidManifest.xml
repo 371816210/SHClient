@@ -5,8 +5,8 @@
     android:versionName="2.569.1089" >
 
     <uses-sdk
-        android:minSdkVersion="9"
-        android:targetSdkVersion="10" />
+        android:minSdkVersion="11"
+        android:targetSdkVersion="19" />
 
     <application
         android:name="com.inhuasoft.shsclient.IMSDroid"
