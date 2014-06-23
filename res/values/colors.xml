@@ -4,5 +4,7 @@
     <color name="tv_login_bg">#FFF69336</color>
     <color name="black">#FF000000</color>
     <color name="gray">#333333</color>
+    <color name="home_title_bg">#DADADA</color>
+    <color name="orange">#fd832c</color>
     
 </resources>

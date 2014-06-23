@@ -89,16 +89,17 @@
         <activity android:name="com.inhuasoft.shsclient.Screens.ScreenDevices" >
         </activity>
         <activity
-            android:name="com.inhuasoft.shsclient.Screens.ScreenLogin"
+            android:name="com.inhuasoft.shsclient.Screens.ScreenUserLogin"
             android:label="@string/app_name"
             android:launchMode="singleTop"
-            android:screenOrientation="landscape"
+            android:screenOrientation="portrait"
             android:theme="@style/BaseActivityStyle" >
              <!--<intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
              </intent-filter> -->
         </activity>
+        
         <activity
             android:name="com.inhuasoft.shsclient.Screens.ScreenMainAV"
             android:screenOrientation="landscape"
