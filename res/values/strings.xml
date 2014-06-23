@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources>
 
-    <string name="app_name">SHServer</string>
+    <string name="app_name">SHClient</string>
     <string name="doubango_revision">1089</string>
     <string name="spinner_ipversion">Select IP version</string>
     <string name="spinner_pcscf_discovery">Select PCSCF Discovery Mode</string>

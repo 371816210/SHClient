@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.inhuasoft.shserver"
+    package="com.inhuasoft.shsclient"
     android:versionCode="569"
     android:versionName="2.569.1089" >
 
@@ -9,16 +9,16 @@
         android:targetSdkVersion="10" />
 
     <application
-        android:name="com.inhuasoft.shserver.IMSDroid"
+        android:name="com.inhuasoft.shsclient.IMSDroid"
         android:hardwareAccelerated="false"
         android:icon="@drawable/icon"
         android:label="@string/app_name"
         android:persistent="true" >
-        <service android:name="com.inhuasoft.shserver.NativeService" >
+        <service android:name="com.inhuasoft.shsclient.NativeService" >
         </service>
 
         <activity
-            android:name="com.inhuasoft.shserver.Main"
+            android:name="com.inhuasoft.shsclient.Main"
             android:label="@string/app_name"
             android:launchMode="singleTop" >
 
@@ -28,21 +28,21 @@
             </intent-filter>
             
         </activity>
-        <activity android:name="com.inhuasoft.shserver.Screens.ScreenSplash" />
-        <activity android:name="com.inhuasoft.shserver.Screens.ScreenHome" />
-        <activity android:name="com.inhuasoft.shserver.Screens.ScreenTabDialer" >
+        <activity android:name="com.inhuasoft.shsclient.Screens.ScreenSplash" />
+        <activity android:name="com.inhuasoft.shsclient.Screens.ScreenHome" />
+        <activity android:name="com.inhuasoft.shsclient.Screens.ScreenTabDialer" >
         </activity>
-        <activity android:name="com.inhuasoft.shserver.Screens.ScreenTabHistory" >
+        <activity android:name="com.inhuasoft.shsclient.Screens.ScreenTabHistory" >
         </activity>
-        <activity android:name="com.inhuasoft.shserver.Screens.ScreenTabInfo" >
+        <activity android:name="com.inhuasoft.shsclient.Screens.ScreenTabInfo" >
         </activity>
-        <activity android:name="com.inhuasoft.shserver.Screens.ScreenTabContacts" >
+        <activity android:name="com.inhuasoft.shsclient.Screens.ScreenTabContacts" >
         </activity>
-        <activity android:name="com.inhuasoft.shserver.Screens.ScreenTabOnline" >
+        <activity android:name="com.inhuasoft.shsclient.Screens.ScreenTabOnline" >
         </activity>
-        <activity android:name="com.inhuasoft.shserver.Screens.ScreenAV" >
+        <activity android:name="com.inhuasoft.shsclient.Screens.ScreenAV" >
         </activity>
-        <activity android:name="com.inhuasoft.shserver.Screens.ScreenInterceptCall" >
+        <activity android:name="com.inhuasoft.shsclient.Screens.ScreenInterceptCall" >
             <intent-filter>
 
                 <!-- <action android:name="android.intent.action.CALL" /> -->
@@ -50,46 +50,46 @@
                 <!-- <data android:scheme="sip" /> -->
             </intent-filter>
         </activity>
-        <activity android:name="com.inhuasoft.shserver.Screens.ScreenSettings" >
+        <activity android:name="com.inhuasoft.shsclient.Screens.ScreenSettings" >
         </activity>
-        <activity android:name="com.inhuasoft.shserver.Screens.ScreenTabMessages" >
+        <activity android:name="com.inhuasoft.shsclient.Screens.ScreenTabMessages" >
         </activity>
-        <activity android:name="com.inhuasoft.shserver.Screens.ScreenGeneral" >
+        <activity android:name="com.inhuasoft.shsclient.Screens.ScreenGeneral" >
         </activity>
-        <activity android:name="com.inhuasoft.shserver.Screens.ScreenIdentity" >
+        <activity android:name="com.inhuasoft.shsclient.Screens.ScreenIdentity" >
         </activity>
-        <activity android:name="com.inhuasoft.shserver.Screens.ScreenNetwork" >
+        <activity android:name="com.inhuasoft.shsclient.Screens.ScreenNetwork" >
         </activity>
-        <activity android:name="com.inhuasoft.shserver.Screens.ScreenCodecs" >
+        <activity android:name="com.inhuasoft.shsclient.Screens.ScreenCodecs" >
         </activity>
-        <activity android:name="com.inhuasoft.shserver.Screens.ScreenSecurity" >
+        <activity android:name="com.inhuasoft.shsclient.Screens.ScreenSecurity" >
         </activity>
-        <activity android:name="com.inhuasoft.shserver.Screens.ScreenContacts" >
+        <activity android:name="com.inhuasoft.shsclient.Screens.ScreenContacts" >
         </activity>
-        <activity android:name="com.inhuasoft.shserver.Screens.ScreenPresence" >
+        <activity android:name="com.inhuasoft.shsclient.Screens.ScreenPresence" >
         </activity>
-        <activity android:name="com.inhuasoft.shserver.Screens.ScreenMessaging" >
+        <activity android:name="com.inhuasoft.shsclient.Screens.ScreenMessaging" >
         </activity>
-        <activity android:name="com.inhuasoft.shserver.Screens.ScreenNatt" >
+        <activity android:name="com.inhuasoft.shsclient.Screens.ScreenNatt" >
         </activity>
-        <activity android:name="com.inhuasoft.shserver.Screens.ScreenQoS" >
+        <activity android:name="com.inhuasoft.shsclient.Screens.ScreenQoS" >
         </activity>
-        <activity android:name="com.inhuasoft.shserver.Screens.ScreenAbout" >
+        <activity android:name="com.inhuasoft.shsclient.Screens.ScreenAbout" >
         </activity>
-        <activity android:name="com.inhuasoft.shserver.Screens.ScreenChat" >
+        <activity android:name="com.inhuasoft.shsclient.Screens.ScreenChat" >
         </activity>
-        <activity android:name="com.inhuasoft.shserver.Screens.ScreenFileTransferQueue" >
+        <activity android:name="com.inhuasoft.shsclient.Screens.ScreenFileTransferQueue" >
         </activity>
-        <activity android:name="com.inhuasoft.shserver.Screens.ScreenFileTransferView" >
+        <activity android:name="com.inhuasoft.shsclient.Screens.ScreenFileTransferView" >
         </activity>
-        <activity android:name="com.inhuasoft.shserver.Screens.ScreenAVQueue" >
+        <activity android:name="com.inhuasoft.shsclient.Screens.ScreenAVQueue" >
         </activity>
-        <activity android:name="com.inhuasoft.shserver.Screens.ScreenChatQueue" >
+        <activity android:name="com.inhuasoft.shsclient.Screens.ScreenChatQueue" >
         </activity>
-        <activity android:name="com.inhuasoft.shserver.Screens.ScreenDevices" >
+        <activity android:name="com.inhuasoft.shsclient.Screens.ScreenDevices" >
         </activity>
         <activity
-            android:name="com.inhuasoft.shserver.Screens.ScreenLogin"
+            android:name="com.inhuasoft.shsclient.Screens.ScreenLogin"
             android:label="@string/app_name"
             android:launchMode="singleTop"
             android:screenOrientation="landscape"
@@ -100,7 +100,7 @@
              </intent-filter> -->
         </activity>
         <activity
-            android:name="com.inhuasoft.shserver.Screens.ScreenMainAV"
+            android:name="com.inhuasoft.shsclient.Screens.ScreenMainAV"
             android:screenOrientation="landscape"
             android:theme="@style/BaseActivityStyle"
             android:label="@string/title_activity_screen_main_av" >
