@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ListView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/screen_tab_contacts_listView"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="fill_vertical|fill_horizontal"
+    android:horizontalSpacing="15px"
+    android:isScrollContainer="true"
+    android:numColumns="1"
+    android:padding="5px"
+    android:scrollbars="vertical"
+    android:smoothScrollbar="true"
+    android:stretchMode="columnWidth" >
+
+</ListView>

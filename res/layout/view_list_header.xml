@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/view_list_header_title"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/color_gray"
+    android:paddingLeft="3px"
+    android:text="Group"
+    android:textColor="@color/color_white"
+    android:textSize="16dp"
+    android:textStyle="bold" >
+
+</TextView>

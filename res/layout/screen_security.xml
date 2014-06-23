@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" >
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:id="@+id/screen_security_linearLayout_srtp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/screen_security_textView_srtp_mode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SRTP Mode"
+                android:textSize="20dp" >
+            </TextView>
+
+            <Spinner
+                android:id="@+id/screen_security_spinner_srtp_modes"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+            </Spinner>
+
+            <TextView
+                android:id="@+id/screen_security_textView_srtp_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SRTP Type"
+                android:textSize="20dp" >
+            </TextView>
+
+            <Spinner
+                android:id="@+id/screen_security_spinner_srtp_types"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+            </Spinner>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/screen_security_linearLayout_imsaka"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/screen_security_linearLayout_srtp"
+            android:layout_marginBottom="5px"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/screen_security_textView_amf"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="AMF"
+                android:textSize="20dp" >
+            </TextView>
+
+            <EditText
+                android:id="@+id/screen_security_editText_amf"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="0x0000" >
+            </EditText>
+
+            <TextView
+                android:id="@+id/screen_security_textView_opid"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="Operator Id"
+                android:textSize="20dp" >
+            </TextView>
+
+            <EditText
+                android:id="@+id/screen_security_editText_opid"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="0x00000000000000000000000000000000" >
+            </EditText>
+        </LinearLayout>
+
+        <CheckBox
+            android:id="@+id/screen_security_checkBox_tlsfiles"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/screen_security_linearLayout_imsaka"
+            android:text="TLS Certificates"
+            android:visibility="visible" >
+        </CheckBox>
+
+        <LinearLayout
+            android:id="@+id/screen_security_linearLayout_tlsfiles"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/screen_security_checkBox_tlsfiles"
+            android:layout_marginLeft="10px"
+            android:orientation="vertical"
+            android:visibility="visible" >
+
+            <TextView
+                android:id="@+id/screen_security_textView_privatekey"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/screen_security_checkBox_tlsfiles"
+                android:layout_marginLeft="5px"
+                android:layout_marginTop="5px"
+                android:text="Private Key File" >
+            </TextView>
+
+            <LinearLayout
+                android:id="@+id/screen_security_linearLayout_private_key"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/screen_security_textView_privatekey" >
+
+                <EditText
+                    android:id="@+id/screen_security_editText_private_key"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/screen_security_textView_privatekey"
+                    android:layout_gravity="fill_horizontal"
+                    android:layout_marginLeft="5px"
+                    android:layout_weight="1"
+                    android:inputType="textUri" >
+                </EditText>
+
+                <ImageButton
+                    android:id="@+id/screen_security_imageButton_private_key"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/screen_security_textView_privatekey"
+                    android:layout_marginRight="5px"
+                    android:layout_toRightOf="@+id/screen_security_editText_private_key"
+                    android:src="@drawable/folder_24"
+                    android:visibility="invisible" >
+                </ImageButton>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/screen_security_textView_public_key"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/screen_security_linearLayout_private_key"
+                android:layout_marginLeft="5px"
+                android:text="Public Key File" >
+            </TextView>
+
+            <LinearLayout
+                android:id="@+id/screen_security_linearLayout_public_key"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/screen_security_textView_public_key" >
+
+                <EditText
+                    android:id="@+id/screen_security_editText_public_key"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/screen_security_textView_public_key"
+                    android:layout_marginLeft="5px"
+                    android:layout_weight="1" >
+                </EditText>
+
+                <ImageButton
+                    android:id="@+id/screen_security_imageButton_public_key"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/screen_security_textView_public_key"
+                    android:layout_marginRight="5px"
+                    android:layout_toRightOf="@+id/screen_security_editText_public_key"
+                    android:src="@drawable/folder_24"
+                    android:visibility="invisible" >
+                </ImageButton>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/screen_security_textView_ca"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/screen_security_linearLayout_public_key"
+                android:layout_marginLeft="5px"
+                android:text="Certificate File (CA)" >
+            </TextView>
+
+            <LinearLayout
+                android:id="@+id/screen_security_linearLayout_ca"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/screen_security_textView_ca" >
+
+                <EditText
+                    android:id="@+id/screen_security_editText_ca"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/screen_security_textView_ca"
+                    android:layout_marginLeft="5px"
+                    android:layout_weight="1" >
+                </EditText>
+
+                <ImageButton
+                    android:id="@+id/screen_security_imageButton_ca"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/screen_security_textView_ca"
+                    android:layout_marginRight="5px"
+                    android:layout_toRightOf="@+id/screen_security_editText_ca"
+                    android:src="@drawable/folder_24"
+                    android:visibility="invisible" >
+                </ImageButton>
+            </LinearLayout>
+
+            <CheckBox
+                android:id="@+id/screen_security_checkBox_tls_secagree"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/screen_security_linearLayout_ca"
+                android:text="Enable TLS security Agreement"
+                android:visibility="invisible" >
+            </CheckBox>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/screen_security_button_ipsec"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/screen_security_linearLayout_tlsfiles"
+            android:layout_marginLeft="5px"
+            android:layout_marginTop="10px"
+            android:text="Advanced (IPSec Sec-Agree)"
+            android:visibility="invisible" >
+        </Button>
+    </RelativeLayout>
+
+</ScrollView>

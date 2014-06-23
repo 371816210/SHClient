@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/color_white"
+    android:orientation="vertical"
+    android:weightSum="6" >
+
+    <TextView
+        android:id="@+id/screen_chat_item_textView_date"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="3px"
+        android:gravity="center_horizontal"
+        android:text="Vendredi 25, 2001 8:09 PM"
+        android:textColor="@color/color_gray"
+        android:textSize="10dp"
+        android:textStyle="bold" >
+    </TextView>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="3px"
+        android:layout_marginRight="3px" >
+
+        <LinearLayout
+            android:id="@+id/screen_chat_item_linearLayout_left"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content" >
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="6"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="6" >
+
+                <ImageView
+                    android:id="@+id/screen_chat_item_imageView_top_left"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/baloon_in_top_left" >
+                </ImageView>
+
+                <ImageView
+                    android:id="@+id/screen_chat_item_imageView_top_center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="6"
+                    android:background="@drawable/baloon_in_top_center" >
+                </ImageView>
+
+                <ImageView
+                    android:id="@+id/screen_chat_item_imageView_top_right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/baloon_in_top_right" >
+                </ImageView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="6" >
+
+                <ImageView
+                    android:id="@+id/screen_chat_item_imageView_middle_left"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:background="@drawable/baloon_in_middle_left" >
+                </ImageView>
+
+                <TextView
+                    android:id="@+id/screen_chat_item_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="6"
+                    android:background="@drawable/baloon_in_middle_center"
+                    android:text="TextView"
+                    android:textColor="@color/color_black"
+                    android:textSize="14dp" >
+                </TextView>
+
+                <ImageView
+                    android:id="@+id/screen_chat_item_imageView_middle_right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:background="@drawable/baloon_in_middle_right" >
+                </ImageView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="6" >
+
+                <ImageView
+                    android:id="@+id/screen_chat_item_imageView_bottom_left"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/baloon_in_bottom_left" >
+                </ImageView>
+
+                <ImageView
+                    android:id="@+id/screen_chat_item_imageView_bottom_center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="6"
+                    android:background="@drawable/baloon_in_bottom_center" >
+                </ImageView>
+
+                <ImageView
+                    android:id="@+id/screen_chat_item_imageView_bottom_right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/baloon_in_bottom_right" >
+                </ImageView>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/screen_chat_item_linearLayout_right"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content" >
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingTop="3px" >
+
+    <ImageView
+        android:id="@+id/screen_tab_contacts_item_imageView_avatar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="3px"
+        android:src="@drawable/avatar_24" >
+    </ImageView>
+
+    <TextView
+        android:id="@+id/screen_tab_contacts_item_textView_displayname"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_margin="4dp"
+        android:layout_weight="3"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:lines="1"
+        android:text="John Doe"
+        android:textColor="@color/color_white"
+        android:textSize="23dp" >
+    </TextView>
+
+</LinearLayout>

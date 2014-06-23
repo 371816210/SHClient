@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_mainpage_bg"
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        android:layout_width="0dip"
+        android:layout_height="match_parent"
+        android:layout_weight="5"
+        android:orientation="vertical"
+        android:paddingLeft="60.0dip" >
+
+        <ImageView
+            android:layout_width="410.0dip"
+            android:layout_height="73.0dip"
+            android:layout_marginTop="95.0dip"
+            android:background="@drawable/ic_mainpage_logo" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:background="@color/gray"
+            android:layout_height="360.0dip"
+            android:layout_marginTop="20.0dip" >
+
+            <RelativeLayout
+             android:id="@+id/screen_av_relativeLayout_new"
+             android:layout_width="fill_parent"
+             android:layout_height="fill_parent">
+             </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10.0dip"
+                android:text=""
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/linearly_btn_left"
+            android:padding="6.0dip" >
+
+            <ImageButton
+                android:layout_width="0.0dip"
+                android:layout_height="40.0dip"
+                android:layout_weight="1"
+                android:background="@drawable/ic_button_bg"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_mainpage_recoder" />
+
+            <ImageButton
+                android:layout_width="0.0dip"
+                android:layout_height="40.0dip"
+                android:layout_marginLeft="2.0dip"
+                android:layout_weight="1"
+                android:background="@drawable/ic_button_bg"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_mainpage_mute" />
+
+            <ImageButton
+                android:layout_width="0.0dip"
+                android:id="@+id/imgbtn_hang_up"
+                android:layout_height="40.0dip"
+                android:layout_marginLeft="2.0dip"
+                android:layout_weight="2.5"
+                android:background="@drawable/ic_button_bg"
+                android:scaleType="fitCenter"
+                android:src="@drawable/phone_hang_up_48" 
+                 />
+
+            <ImageButton
+                android:layout_width="0.0dip"
+                android:layout_height="40.0dip"
+                android:layout_marginLeft="2.0dip"
+                android:layout_weight="1"
+                android:background="@drawable/ic_button_bg"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_mainpage_pause" />
+
+            <ImageButton
+                android:layout_width="0.0dip"
+                android:layout_height="40.0dip"
+                android:layout_marginLeft="2.0dip"
+                android:layout_weight="1"
+                android:background="@drawable/ic_button_bg"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_mainpage_photo" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dip"
+        android:layout_height="match_parent"
+        android:layout_weight="4"
+        android:orientation="vertical"
+        android:paddingRight="30.0dip" >
+
+        <ImageView
+            android:layout_width="432.0dip"
+            android:layout_height="99.0dip"
+            android:layout_marginTop="70.0dip"
+            android:background="@drawable/ic_mainpage_weather" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20.0dip"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:layout_width="0.0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="4"
+                android:orientation="vertical"
+                android:paddingLeft="3.0dip"
+                android:paddingRight="3.0dip" >
+              <LinearLayout 
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content" 
+                 android:orientation="vertical" >
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="180.0dip"
+                    android:scaleType="center"
+                    android:src="@drawable/ic_mainpage_pg1" />
+
+              <!--  <FrameLayout
+            android:id="@+id/view_call_incall_video_FrameLayout_local_video_new"
+            android:layout_width="match_parent"
+            android:layout_height="180.0dip"
+            >
+             </FrameLayout> -->
+               <LinearLayout
+                    android:id="@+id/view_call_incall_video_FrameLayout_local_video_new"
+                      android:layout_width="match_parent"
+                      android:layout_height="180.0dip"
+                      android:background="@color/gray"
+                    android:orientation="vertical"
+                    android:padding="6.0dip" >
+                </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:id="@+id/linearly_btn_right"
+                    android:padding="6.0dip" >
+
+                    <ImageButton
+                        android:layout_width="0.0dip"
+                        android:layout_height="40.0dip"
+                        android:layout_weight="1"
+                        android:background="@drawable/ic_button_bg"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_mainpage_mute" />
+
+                    <ImageButton
+                        android:layout_width="0.0dip"
+                        android:layout_height="40.0dip"
+                        android:layout_marginLeft="2.0dip"
+                        android:layout_weight="2.3"
+                        android:background="@drawable/ic_button_bg"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/phone_hang_up_48" />
+
+                    <ImageButton
+                        android:layout_width="0.0dip"
+                        android:layout_height="40.0dip"
+                        android:layout_marginLeft="2.0dip"
+                        android:layout_weight="1"
+                        android:background="@drawable/ic_button_bg"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_mainpage_photo" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0.0dip"
+                android:layout_height="408.dip"
+                android:layout_weight="3"
+                android:background="@drawable/ic_mainpage_contacts"
+                android:orientation="vertical" >
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

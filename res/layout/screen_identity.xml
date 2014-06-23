@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:isScrollContainer="true"
+        android:orientation="vertical"
+        android:scrollbars="vertical" >
+
+        <TextView
+            android:id="@+id/screen_identity_textView_displayname"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2px"
+            android:text="Display Name"
+            android:textSize="20dp" >
+        </TextView>
+
+        <EditText
+            android:id="@+id/screen_identity_editText_displayname"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/screen_identity_textView_displayname"
+            android:ellipsize="end"
+            android:gravity="fill_horizontal"
+            android:text="alice" >
+        </EditText>
+
+        <TextView
+            android:id="@+id/screen_identity_textView_impu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/screen_identity_editText_displayname"
+            android:layout_marginLeft="2px"
+            android:layout_marginTop="2dp"
+            android:text="Public Identity*"
+            android:textSize="20dp" >
+        </TextView>
+
+        <EditText
+            android:id="@+id/screen_identity_editText_impu"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/screen_identity_textView_impu"
+            android:text="sip:alice@open-ims.test" >
+        </EditText>
+
+        <TextView
+            android:id="@+id/screen_identity_textView_impi"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/screen_identity_editText_impu"
+            android:layout_marginTop="2dp"
+            android:text="Private Identity*"
+            android:textSize="20dp" >
+        </TextView>
+
+        <EditText
+            android:id="@+id/screen_identity_editText_impi"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/screen_identity_textView_impi"
+            android:text="alice@open-ims.test" >
+        </EditText>
+
+        <TextView
+            android:id="@+id/screen_identity_textView_password"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/screen_identity_editText_impi"
+            android:layout_marginTop="2dp"
+            android:text="Password"
+            android:textSize="20dp" >
+        </TextView>
+
+        <EditText
+            android:id="@+id/screen_identity_editText_password"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/screen_identity_textView_password"
+            android:inputType="textPassword"
+            android:text="alice" >
+        </EditText>
+
+        <TextView
+            android:id="@+id/screen_identity_TextView_realm"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/screen_identity_editText_password"
+            android:layout_marginTop="2dp"
+            android:text="Realm*"
+            android:textSize="20dp" >
+        </TextView>
+
+        <EditText
+            android:id="@+id/screen_identity_editText_realm"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/screen_identity_TextView_realm"
+            android:text="sip:open-ims.test" >
+        </EditText>
+
+        <CheckBox
+            android:id="@+id/screen_identity_checkBox_earlyIMS"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/screen_identity_editText_realm"
+            android:layout_marginTop="4dp"
+            android:text="3GPP Early IMS Security"
+            android:textSize="20dp" >
+        </CheckBox>
+    </RelativeLayout>
+
+</ScrollView>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:weightSum="8" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:weightSum="6" >
+
+        <include
+            android:id="@+id/view_dialer_buttons_1"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_margin="2px"
+            android:layout_weight="2"
+            layout="@layout/view_dialer_button_text" />
+
+        <include
+            android:id="@+id/view_dialer_buttons_2"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_margin="2px"
+            android:layout_weight="2"
+            layout="@layout/view_dialer_button_text" />
+
+        <include
+            android:id="@+id/view_dialer_buttons_3"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_margin="2px"
+            android:layout_weight="2"
+            layout="@layout/view_dialer_button_text" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:weightSum="6" >
+
+        <include
+            android:id="@+id/view_dialer_buttons_4"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_margin="2px"
+            android:layout_weight="2"
+            layout="@layout/view_dialer_button_text" />
+
+        <include
+            android:id="@+id/view_dialer_buttons_5"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_margin="2px"
+            android:layout_weight="2"
+            layout="@layout/view_dialer_button_text" />
+
+        <include
+            android:id="@+id/view_dialer_buttons_6"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_margin="2px"
+            android:layout_weight="2"
+            layout="@layout/view_dialer_button_text" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:weightSum="6" >
+
+        <include
+            android:id="@+id/view_dialer_buttons_7"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_margin="2px"
+            android:layout_weight="2"
+            layout="@layout/view_dialer_button_text" />
+
+        <include
+            android:id="@+id/view_dialer_buttons_8"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_margin="2px"
+            android:layout_weight="2"
+            layout="@layout/view_dialer_button_text" />
+
+        <include
+            android:id="@+id/view_dialer_buttons_9"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_margin="2px"
+            android:layout_weight="2"
+            layout="@layout/view_dialer_button_text" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:weightSum="6" >
+
+        <include
+            android:id="@+id/view_dialer_buttons_star"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_margin="2px"
+            android:layout_weight="2"
+            layout="@layout/view_dialer_button_text" />
+
+        <include
+            android:id="@+id/view_dialer_buttons_0"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_margin="2px"
+            android:layout_weight="2"
+            layout="@layout/view_dialer_button_text" />
+
+        <include
+            android:id="@+id/view_dialer_buttons_sharp"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_margin="2px"
+            android:layout_weight="2"
+            layout="@layout/view_dialer_button_text" />
+    </LinearLayout>
+
+</LinearLayout>
