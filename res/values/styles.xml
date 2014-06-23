@@ -38,8 +38,22 @@
 		<item name="@android:windowExitAnimation">@anim/shrink_from_top</item>
 	</style>
 
+    
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
 
- <style name="BaseActivityStyle" parent="@android:style/Theme.Black.NoTitleBar.Fullscreen">
+        -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+    
+    <style name="BaseActivityStyle" parent="@android:style/Theme.Light.NoTitleBar">
         <item name="android:windowSoftInputMode">stateUnchanged</item>
     </style>
 
@@ -51,5 +65,8 @@
 
     <style name="CustomCheckboxTheme" parent="@android:style/Widget.CompoundButton.CheckBox">
         <item name="android:button">@drawable/ic_checkbox_selector</item>
+    </style>
+ <style name="StartActivityStyle" parent="@android:style/Theme.Black.NoTitleBar.Fullscreen">
+        <item name="android:windowSoftInputMode">stateUnchanged</item>
     </style>
 </resources>

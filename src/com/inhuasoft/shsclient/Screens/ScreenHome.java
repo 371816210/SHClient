@@ -20,41 +20,29 @@
 package com.inhuasoft.shsclient.Screens;
 
 
-import com.inhuasoft.shsclient.CustomDialog;
 import com.inhuasoft.shsclient.Main;
 import com.inhuasoft.shsclient.R;
 import org.doubango.ngn.events.NgnEventArgs;
 import org.doubango.ngn.events.NgnRegistrationEventArgs;
-import org.doubango.ngn.media.NgnMediaType;
 import org.doubango.ngn.services.INgnConfigurationService;
 import org.doubango.ngn.services.INgnSipService;
 import org.doubango.ngn.sip.NgnSipSession.ConnectionState;
-import org.doubango.ngn.utils.NgnConfigurationEntry;
-import android.app.Activity;
-import android.app.AlertDialog;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.BroadcastReceiver;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
-import android.os.Message;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.View.OnClickListener;
-import android.widget.AdapterView;
-import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.AdapterView.OnItemClickListener;
 
 
 public class ScreenHome extends BaseScreen  implements OnClickListener{
@@ -82,7 +70,6 @@ public class ScreenHome extends BaseScreen  implements OnClickListener{
 	private static final int MENU_EXIT = 0;
 	private static final int MENU_SETTINGS = 1;
 	
-	private GridView mGridView;
 	
 	private final INgnSipService mSipService;
 	private final INgnConfigurationService mConfigurationService;
@@ -136,7 +123,7 @@ public class ScreenHome extends BaseScreen  implements OnClickListener{
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_home);
-		
+		initViews();
         mFragmentManager = getFragmentManager();
 		setTabSelection(0);
 		

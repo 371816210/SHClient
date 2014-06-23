@@ -21,15 +21,18 @@
             android:name="com.inhuasoft.shsclient.Main"
             android:label="@string/app_name"
             android:launchMode="singleTop" >
-
-           <intent-filter>
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            
         </activity>
         <activity android:name="com.inhuasoft.shsclient.Screens.ScreenSplash" />
-        <activity android:name="com.inhuasoft.shsclient.Screens.ScreenHome" />
+        <activity
+            android:name="com.inhuasoft.shsclient.Screens.ScreenHome"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseActivityStyle" >
+        </activity>
         <activity android:name="com.inhuasoft.shsclient.Screens.ScreenTabDialer" >
         </activity>
         <activity android:name="com.inhuasoft.shsclient.Screens.ScreenTabHistory" >
@@ -94,17 +97,19 @@
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:theme="@style/BaseActivityStyle" >
-             <!--<intent-filter>
+
+            <!--
+             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
-             </intent-filter> -->
+             </intent-filter>
+            -->
         </activity>
-        
         <activity
             android:name="com.inhuasoft.shsclient.Screens.ScreenMainAV"
+            android:label="@string/title_activity_screen_main_av"
             android:screenOrientation="landscape"
-            android:theme="@style/BaseActivityStyle"
-            android:label="@string/title_activity_screen_main_av" >
+            android:theme="@style/BaseActivityStyle" >
         </activity>
     </application>
 
