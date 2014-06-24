@@ -106,7 +106,7 @@ public class Main extends ActivityGroup {
 			thread.start();
 		}
         
-       //û�е�½ 
+       //û�е�½ 
        if(!mConfigurationService.getBoolean(NgnConfigurationEntry.USER_LOGIN,
 				NgnConfigurationEntry.DEFAULT_USER_LOGIN))
     	{
@@ -275,7 +275,7 @@ public class Main extends ActivityGroup {
 						});
 					}
 					if(avSession != null){
-						if(!mScreenService.show(ScreenAV.class, Long.toString(avSession.getId()))){
+						if(!mScreenService.show(ScreenHome.class, Long.toString(avSession.getId()))){
 							mScreenService.show(ScreenHome.class);
 						}
 					}

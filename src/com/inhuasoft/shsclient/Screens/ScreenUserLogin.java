@@ -140,7 +140,6 @@ public class ScreenUserLogin extends BaseScreen implements OnClickListener {
 		 mConfigurationService.putString(NgnConfigurationEntry.IDENTITY_IMPI, editUserName.getText().toString());
 		 mConfigurationService.putString(NgnConfigurationEntry.IDENTITY_DISPLAY_NAME, editUserName.getText().toString());
 		 mConfigurationService.putString(NgnConfigurationEntry.IDENTITY_PASSWORD, editPassword.getText().toString());
-         //登录成功，写入配置信息
 		 mConfigurationService.putBoolean(NgnConfigurationEntry.USER_LOGIN, true);
 		 
 		 mConfigurationService.putString(NgnConfigurationEntry.USERNAME,editUserName.getText().toString());
@@ -225,7 +224,7 @@ public class ScreenUserLogin extends BaseScreen implements OnClickListener {
 				}
 				break;
 			default:
-				super.handleMessage(msg);// 这里最好对不需要或者不关心的消息抛给父类，避免丢失消息
+				super.handleMessage(msg);
 				break;
 
 			}
@@ -265,7 +264,7 @@ public class ScreenUserLogin extends BaseScreen implements OnClickListener {
 			int eventType = parser.getEventType();
 			while (eventType != XmlPullParser.END_DOCUMENT) {
 				switch (eventType) {
-				case XmlPullParser.START_TAG:// 开始元素事件
+				case XmlPullParser.START_TAG:// 锟斤拷始元锟斤拷锟铰硷拷
 					String name = parser.getName();
 					if (name.equalsIgnoreCase(nodeName)) {
 						returnStr = parser.nextText();
@@ -338,7 +337,7 @@ public class ScreenUserLogin extends BaseScreen implements OnClickListener {
 				DocumentBuilder builder = factory.newDocumentBuilder();
 				Document dom = builder.parse(input);
 				String returncode = getValByTagName(dom,
-						"GetDevicesByUserResult");// 返回码
+						"GetDevicesByUserResult");// 锟斤拷锟斤拷锟斤拷
 				System.out
 						.println("======GetDevicesByUserResult======== return code is  "
 								+ returncode);

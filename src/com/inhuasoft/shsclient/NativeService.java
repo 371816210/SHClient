@@ -20,6 +20,7 @@
 package com.inhuasoft.shsclient;
 
 import com.inhuasoft.shsclient.Screens.ScreenAV;
+import com.inhuasoft.shsclient.Screens.ScreenHome;
 import com.inhuasoft.shsclient.R;
 
 import org.doubango.ngn.NgnNativeService;
@@ -192,7 +193,7 @@ public class NativeService extends NgnNativeService {
 								final NgnAVSession avSession = NgnAVSession.getSession(args.getSessionId());
 								if(avSession != null){
 									mEngine.showAVCallNotif(R.drawable.phone_call_25, getString(R.string.string_call_incoming));
-									ScreenAV.receiveCall(avSession);
+									ScreenHome.receiveCall(avSession);
 									if(mWakeLock != null && !mWakeLock.isHeld()){
 										mWakeLock.acquire(10);
 									}

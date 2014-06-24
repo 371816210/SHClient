@@ -44,11 +44,12 @@
         android:layout_marginRight="10.0dip"
         android:text="已通话 03:58" />
 
+    <LinearLayout   android:id="@+id/linearLayout_phone_main" android:layout_width="match_parent"  android:layout_height="200.0dip" >
     <View
         android:layout_width="match_parent"
         android:layout_height="200.0dip"
         android:background="@color/orange" />
-
+    </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

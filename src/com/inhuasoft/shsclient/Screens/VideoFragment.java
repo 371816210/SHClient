@@ -1,5 +1,8 @@
 package com.inhuasoft.shsclient.Screens;
 
+import org.doubango.ngn.media.NgnMediaType;
+import org.doubango.ngn.utils.NgnConfigurationEntry;
+
 import com.inhuasoft.shsclient.R;
 
 import android.app.Fragment;
@@ -30,7 +33,8 @@ public class VideoFragment extends Fragment {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				((ScreenHome)getActivity()).setTabSelection(ScreenHome.TWOWAY_INTENT_FLAG);
+				//((ScreenHome)getActivity()).setTabSelection(ScreenHome.TWOWAY_INTENT_FLAG);
+				ScreenHome.makeCall(((ScreenHome)getActivity()).mConfigurationService.getString(NgnConfigurationEntry.Devices_SIP_NUMBER, NgnConfigurationEntry.DEFAULT_Devices_SIP_NUMBER), NgnMediaType.AudioVideo);
 			}
 		});
 	}
