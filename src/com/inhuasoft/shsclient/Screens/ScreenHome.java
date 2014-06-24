@@ -48,6 +48,16 @@ import android.widget.TextView;
 public class ScreenHome extends BaseScreen  implements OnClickListener{
 	private static String TAG = ScreenHome.class.getCanonicalName();
 	
+	public static final int HOME_INTENT_FLAG = 0;
+	public static final int VIDEO_INTENT_FLAG = HOME_INTENT_FLAG + 1 ;
+	public static final int SWITCH_INTENT_FLAG = VIDEO_INTENT_FLAG + 1;
+	public static final int CONTROL_INTENT_FLAG = SWITCH_INTENT_FLAG + 1;
+	public static final int MORE_INTENT_FLAG = CONTROL_INTENT_FLAG + 1;
+	public static final int DIAL_INTENT_FLAG = MORE_INTENT_FLAG + 1;
+	public static final int VDIAL_INTENT_FLAG = DIAL_INTENT_FLAG + 1;
+	public static final int TWOWAY_INTENT_FLAG = VDIAL_INTENT_FLAG + 1;
+	public static final int PHOTO_INTENT_FLAG = TWOWAY_INTENT_FLAG + 1;
+	public static final int RECORD_INTENT_FLAG = PHOTO_INTENT_FLAG + 1;
 	
 	private LinearLayout mHomeLayout;
 	private LinearLayout mVideoLayout;
@@ -222,10 +232,10 @@ public class ScreenHome extends BaseScreen  implements OnClickListener{
 		// TODO Auto-generated method stub
 		switch (v.getId()) {
 		case R.id.home_layout:
-			setTabSelection(0);
+			setTabSelection(HOME_INTENT_FLAG);
 			break;
 		case R.id.video_layout:
-			setTabSelection(1);
+			setTabSelection(VIDEO_INTENT_FLAG);
 			break;
 		case R.id.switch_layout:
 
@@ -246,14 +256,14 @@ public class ScreenHome extends BaseScreen  implements OnClickListener{
 	
 	public void setTabSelection(int index) {
 		// TODO Auto-generated method stub
-		// Ã¿´ÎÑ¡ÖĞÖ®Ç°ÏÈÇå³şµôÉÏ´ÎµÄÑ¡ÖĞ×´Ì¬
-		// ¿ªÆôÒ»¸öFragmentÊÂÎñ
+		// æ¯æ¬¡é€‰ä¸­ä¹‹å‰å…ˆæ¸…æ¥šæ‰ä¸Šæ¬¡çš„é€‰ä¸­çŠ¶æ€
+		// å¼€å¯ä¸€ä¸ªFragmentäº‹åŠ¡
 		FragmentTransaction transaction = mFragmentManager.beginTransaction();
-		// ÏÈÒş²ØµôËùÓĞµÄFragment£¬ÒÔ·ÀÖ¹ÓĞ¶à¸öFragmentÏÔÊ¾ÔÚ½çÃæÉÏµÄÇé¿ö
+		// å…ˆéšè—æ‰æ‰€æœ‰çš„Fragmentï¼Œä»¥é˜²æ­¢æœ‰å¤šä¸ªFragmentæ˜¾ç¤ºåœ¨ç•Œé¢ä¸Šçš„æƒ…å†µ
 		hideFragments(transaction);
 		
 		switch (index) {
-		case 0:
+		case HOME_INTENT_FLAG:
 			clearSelection();
 			mHomeLayout.setBackgroundResource(R.drawable.ic_home_bottom_bar_bg);
 			mHomeImageView.setSelected(true);
@@ -265,7 +275,7 @@ public class ScreenHome extends BaseScreen  implements OnClickListener{
 				transaction.show(mHomeFragment);
 			}
 			break;
-		case 1:
+		case VIDEO_INTENT_FLAG:
 			clearSelection();
 			mVideoLayout.setBackgroundResource(R.drawable.ic_home_bottom_bar_bg);
 			mVideoImageView.setSelected(true);
@@ -277,7 +287,7 @@ public class ScreenHome extends BaseScreen  implements OnClickListener{
 				transaction.show(mVideoFragment);
 			}
 			break;
-		case 7:
+		case TWOWAY_INTENT_FLAG:
 			if(mTwowayVideoFragment == null) {
 				mTwowayVideoFragment = new TwowayVideoFragment();
 				transaction.add(R.id.main_content, mTwowayVideoFragment);
@@ -351,10 +361,10 @@ public class ScreenHome extends BaseScreen  implements OnClickListener{
 	}
 
 	/**
-	 * ½«ËùÓĞµÄFragment¶¼ÖÃÎªÒş²Ø×´Ì¬¡£
+	 * å°†æ‰€æœ‰çš„Fragmentéƒ½ç½®ä¸ºéšè—çŠ¶æ€ã€‚
 	 * 
 	 * @param transaction
-	 *            ÓÃÓÚ¶ÔFragmentÖ´ĞĞ²Ù×÷µÄÊÂÎñ
+	 *            ç”¨äºå¯¹Fragmentæ‰§è¡Œæ“ä½œçš„äº‹åŠ¡
 	 */
 	private void hideFragments(FragmentTransaction transaction) {
 		if (mVideoFragment != null) {
@@ -362,6 +372,9 @@ public class ScreenHome extends BaseScreen  implements OnClickListener{
 		}
 		if (mHomeFragment != null) {
 			transaction.hide(mHomeFragment);
+		}
+		if(mTwowayVideoFragment != null) {
+			transaction.hide(mTwowayVideoFragment);
 		}
 	}
 	

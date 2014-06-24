@@ -30,7 +30,7 @@ public class VideoFragment extends Fragment {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				((ScreenHome)getActivity()).setTabSelection(0);
+				((ScreenHome)getActivity()).setTabSelection(ScreenHome.TWOWAY_INTENT_FLAG);
 			}
 		});
 	}
