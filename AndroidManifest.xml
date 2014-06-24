@@ -20,12 +20,13 @@
         <activity
             android:name="com.inhuasoft.shsclient.Main"
             android:label="@string/app_name"
+            android:theme="@style/BaseActivityStyle"
             android:launchMode="singleTop" >
-            <intent-filter>
+             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            </intent-filter> 
         </activity>
         <activity android:name="com.inhuasoft.shsclient.Screens.ScreenSplash" />
         <activity
@@ -96,7 +97,7 @@
             android:label="@string/app_name"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
-            android:theme="@style/BaseActivityStyle" >
+            android:theme="@style/StartActivityStyle" >
 
             <!--
              <intent-filter>
