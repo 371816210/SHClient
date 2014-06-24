@@ -793,7 +793,7 @@ public class TwowayVideoFragment extends Fragment {
 			if(mViewInCallVideo == null){
 				mViewInCallVideo = mInflater.inflate(R.layout.view_call_incall_video, null);
 				//mViewLocalVideoPreview = (FrameLayout)mViewInCallVideo.findViewById(R.id.view_call_incall_video_FrameLayout_local_video);
-				mViewLocalVideoPreview = (LinearLayout)getActivity().findViewById(R.id.view_call_incall_video_FrameLayout_local_video_new);
+				mViewLocalVideoPreview = (LinearLayout)getActivity().findViewById(R.id.linearLayout_phone_local);
 				mViewRemoteVideoPreview = (FrameLayout)mViewInCallVideo.findViewById(R.id.view_call_incall_video_FrameLayout_remote_video);
 			}
 			if(mTvDuration != null){

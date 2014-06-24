@@ -11,7 +11,7 @@
         android:layout_marginBottom="10px"
         android:gravity="center_horizontal"
         android:text="Outgoing Call"
-        android:textColor="@color/color_white"
+        android:textColor="@color/color_black"
         android:textSize="30dp"
         android:textStyle="bold" >
     </TextView>
@@ -42,7 +42,7 @@
         android:layout_marginTop="10px"
         android:gravity="center_horizontal"
         android:text="John Doe"
-        android:textColor="@color/color_white"
+        android:textColor="@color/color_black"
         android:textSize="25dp"
         android:textStyle="bold"
         android:visibility="invisible" >

@@ -11,7 +11,7 @@
         android:layout_marginBottom="5px"
         android:gravity="center_horizontal"
         android:text="In Call"
-        android:textColor="@color/color_white"
+        android:textColor="@color/color_black"
         android:textSize="30dp"
         android:textStyle="bold" >
     </TextView>
@@ -41,7 +41,7 @@
             android:layout_toRightOf="@+id/view_call_incall_audio_imageView_avatar"
             android:gravity="bottom"
             android:text="12:00"
-            android:textColor="@color/color_white"
+            android:textColor="@color/color_black"
             android:textSize="12dp"
             android:textStyle="bold"
             android:visibility="visible" >
@@ -61,7 +61,7 @@
         android:layout_marginTop="10px"
         android:gravity="center_horizontal"
         android:text="John Doe"
-        android:textColor="@color/color_white"
+        android:textColor="@color/color_black"
         android:textSize="25dp"
         android:textStyle="bold"
         android:visibility="invisible" >
