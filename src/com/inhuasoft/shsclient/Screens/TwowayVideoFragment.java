@@ -79,7 +79,7 @@ public class TwowayVideoFragment extends Fragment {
 	private View mViewInAudioCall;
 	private View mViewInCallVideo;
 	private LinearLayout mViewLocalVideoPreview;
-	private FrameLayout mViewRemoteVideoPreview;
+	private LinearLayout mViewRemoteVideoPreview;
 	private View mViewTermwait;
 	private View mViewProxSensor;
 	
@@ -157,9 +157,9 @@ public class TwowayVideoFragment extends Fragment {
 	    getActivity().registerReceiver(mBroadCastRecv, intentFilter);
 	    
 			
-		mMainLayout = (LinearLayout)getActivity().findViewById(R.id.linearLayout_phone_main);
+		mMainLayout = (LinearLayout)getActivity().findViewById(R.id.linearLayout_main);
         loadView();
-        imgbtn_hangup =(Button)getActivity().findViewById(R.id.imgbtn_hang_up_phone);
+        /*imgbtn_hangup =(Button)getActivity().findViewById(R.id.imgbtn_hang_up_phone);
 		imgbtn_hangup.setOnClickListener(new OnClickListener() {
 			
 			@Override
@@ -170,7 +170,7 @@ public class TwowayVideoFragment extends Fragment {
 				}
 				hangUpCall();
 			}
-		});
+		});*/
 	}
 
 
@@ -520,6 +520,7 @@ public class TwowayVideoFragment extends Fragment {
 					case INPROGRESS:
 					case REMOTE_RINGING:
 						loadTryingView();
+						
 						break;
 						
 					case EARLY_MEDIA:
@@ -810,8 +811,8 @@ public class TwowayVideoFragment extends Fragment {
 			if(mViewInCallVideo == null){
 				mViewInCallVideo = mInflater.inflate(R.layout.view_call_incall_video, null);
 				//mViewLocalVideoPreview = (FrameLayout)mViewInCallVideo.findViewById(R.id.view_call_incall_video_FrameLayout_local_video);
-				mViewLocalVideoPreview = (LinearLayout)getActivity().findViewById(R.id.linearLayout_phone_local);
-				mViewRemoteVideoPreview = (FrameLayout)mViewInCallVideo.findViewById(R.id.view_call_incall_video_FrameLayout_remote_video);
+				mViewLocalVideoPreview = (LinearLayout)mViewInCallVideo.findViewById(R.id.view_call_incall_video_FrameLayout_local_video);
+				mViewRemoteVideoPreview = (LinearLayout)mViewInCallVideo.findViewById(R.id.view_call_incall_video_FrameLayout_remote_video);
 			}
 			if(mTvDuration != null){
 				synchronized(mTvDuration){
@@ -822,10 +823,10 @@ public class TwowayVideoFragment extends Fragment {
 			mMainLayout.removeAllViews();
 			mMainLayout.addView(mViewInCallVideo);
 			
-			final View viewSecure = mViewInCallVideo.findViewById(R.id.view_call_incall_video_imageView_secure);
-			if(viewSecure != null){
-				viewSecure.setVisibility(((ScreenHome)getActivity()).mAVSession.isSecure() ? View.VISIBLE : View.INVISIBLE);
-			}
+			//final View viewSecure = mViewInCallVideo.findViewById(R.id.view_call_incall_video_imageView_secure);
+			//if(viewSecure != null){
+			//	viewSecure.setVisibility(((ScreenHome)getActivity()).mAVSession.isSecure() ? View.VISIBLE : View.INVISIBLE);
+			//}
 			
 			// Video Consumer
 			loadVideoPreview();

@@ -104,7 +104,7 @@ public class ScreenAV extends BaseScreen{
 	private View mViewInAudioCall;
 	private View mViewInCallVideo;
 	private LinearLayout mViewLocalVideoPreview;
-	private FrameLayout mViewRemoteVideoPreview;
+	private LinearLayout mViewRemoteVideoPreview;
 	private View mViewTermwait;
 	private View mViewProxSensor;
 	
@@ -1006,9 +1006,9 @@ public class ScreenAV extends BaseScreen{
 		Log.d(TAG, "loadInCallVideoView()");
 		if(mViewInCallVideo == null){
 			mViewInCallVideo = mInflater.inflate(R.layout.view_call_incall_video, null);
-			//mViewLocalVideoPreview = (FrameLayout)mViewInCallVideo.findViewById(R.id.view_call_incall_video_FrameLayout_local_video);
-			mViewLocalVideoPreview = (LinearLayout)this.findViewById(R.id.view_call_incall_video_FrameLayout_local_video_new);
-			mViewRemoteVideoPreview = (FrameLayout)mViewInCallVideo.findViewById(R.id.view_call_incall_video_FrameLayout_remote_video);
+			mViewLocalVideoPreview = (LinearLayout)mViewInCallVideo.findViewById(R.id.view_call_incall_video_FrameLayout_local_video);
+			//mViewLocalVideoPreview = (LinearLayout)this.findViewById(R.id.view_call_incall_video_FrameLayout_local_video_new);
+			mViewRemoteVideoPreview = (LinearLayout)mViewInCallVideo.findViewById(R.id.view_call_incall_video_FrameLayout_remote_video);
 		}
 		if(mTvDuration != null){
 			synchronized(mTvDuration){
@@ -1019,10 +1019,10 @@ public class ScreenAV extends BaseScreen{
 		mMainLayout.removeAllViews();
 		mMainLayout.addView(mViewInCallVideo);
 		
-		final View viewSecure = mViewInCallVideo.findViewById(R.id.view_call_incall_video_imageView_secure);
-		if(viewSecure != null){
-			viewSecure.setVisibility(mAVSession.isSecure() ? View.VISIBLE : View.INVISIBLE);
-		}
+		//final View viewSecure = mViewInCallVideo.findViewById(R.id.view_call_incall_video_imageView_secure);
+		//if(viewSecure != null){
+		//	viewSecure.setVisibility(mAVSession.isSecure() ? View.VISIBLE : View.INVISIBLE);
+		//}
 		
 		// Video Consumer
 		loadVideoPreview();
