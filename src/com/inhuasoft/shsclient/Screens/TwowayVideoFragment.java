@@ -535,6 +535,7 @@ public class TwowayVideoFragment extends Fragment {
 						// Send blank packets to open NAT pinhole
 						if(((ScreenHome)getActivity()).mAVSession != null){
 							//applyCamRotation(mAVSession.compensCamRotation(true));
+							((ScreenHome)getActivity()).mAVSession.setRotation(270);
 							mTimerBlankPacket.schedule(mTimerTaskBlankPacket, 0, 250);
 							if(!((ScreenHome)getActivity()).mIsVideoCall){
 								mTimerInCall.schedule(mTimerTaskInCall, 0, 1000);
