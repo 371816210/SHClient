@@ -1,5 +1,6 @@
 package com.inhuasoft.shsclient.Screens;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.TimerTask;
 
@@ -60,6 +61,7 @@ import com.inhuasoft.shsclient.R;
 public class TwowayVideoFragment extends Fragment {
 	
 	private static final String TAG = TwowayVideoFragment.class.getCanonicalName();
+	private static final SimpleDateFormat sDurationTimerFormat = new SimpleDateFormat("mm:ss");
 	private static int mCountBlankPacket;
 	private static int mLastRotation; // values: degrees
 	private boolean mSendDeviceInfo;
@@ -167,10 +169,6 @@ public class TwowayVideoFragment extends Fragment {
 					mTvInfo.setText("Ending the call...");
 				}
 				hangUpCall();
-				if(mViewLocalVideoPreview != null){
-					mViewLocalVideoPreview.removeAllViews();
-				}
-				((ScreenHome)getActivity()).setTabSelection(ScreenHome.HOME_INTENT_FLAG);
 			}
 		});
 	}
@@ -444,7 +442,8 @@ public class TwowayVideoFragment extends Fragment {
 
 	  private boolean hangUpCall(){
 		if(((ScreenHome)getActivity()).mAVSession != null){
-			return ((ScreenHome)getActivity()).mAVSession.hangUpCall();
+			boolean flag = ((ScreenHome)getActivity()).mAVSession.hangUpCall();
+			return flag;
 		}
  		return false;
 	  }
@@ -895,6 +894,9 @@ public class TwowayVideoFragment extends Fragment {
 			}
 			
 			mMainLayout.removeAllViews();
+			if(mViewLocalVideoPreview != null){
+				//	mViewLocalVideoPreview.removeAllViews();
+			}
 			mMainLayout.addView(mViewTermwait);
 			mCurrentView = ViewType.ViewTermwait;
 		}
@@ -924,7 +926,7 @@ public class TwowayVideoFragment extends Fragment {
 						getActivity().runOnUiThread(new Runnable() {
 							public void run() {
 								try{
-								//	mTvDuration.setText(sDurationTimerFormat.format(date));
+									mTvDuration.setText(sDurationTimerFormat.format(date));
 								}
 								catch(Exception e){}
 							}});
@@ -960,15 +962,15 @@ public class TwowayVideoFragment extends Fragment {
 		private final TimerTask mTimerTaskSuicide = new TimerTask(){
 			@Override
 			public void run() {
-		/*		getActivity().runOnUiThread(new Runnable() {
+				getActivity().runOnUiThread(new Runnable() {
 					public void run() {
 						IBaseScreen currentScreen = ((ScreenHome)getActivity()).mScreenService.getCurrentScreen();
-						boolean gotoHome = (currentScreen != null && currentScreen.getId() == getId());
+						boolean gotoHome = (currentScreen != null && currentScreen.getId() == ((ScreenHome)getActivity()).getId());
 						if(gotoHome){
-							mScreenService.show(ScreenHome.class);
+							((ScreenHome)getActivity()).mScreenService.show(ScreenHome.class);
 						}
-						mScreenService.destroy(getId());
-					}});*/
+						((ScreenHome)getActivity()).mScreenService.destroy(((ScreenHome)getActivity()).getId());
+					}});
 			}
 		};
 		
