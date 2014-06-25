@@ -79,6 +79,7 @@
             android:src="@drawable/ic_video_mute" />
 
         <Button
+            android:id="@+id/imgbtn_hang_up_phone"
             android:layout_width="0.0dip"
             android:layout_height="match_parent"
             android:layout_marginLeft="2.0dip"

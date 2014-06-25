@@ -44,6 +44,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
 import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -107,7 +108,7 @@ public class TwowayVideoFragment extends Fragment {
 	
 	private static boolean SHOW_SIP_PHRASE = true;
 	
-	ImageButton imgbtn_hangup;
+	Button imgbtn_hangup;
 	
 	private static enum ViewType{
 		ViewNone,
@@ -156,6 +157,22 @@ public class TwowayVideoFragment extends Fragment {
 			
 		mMainLayout = (LinearLayout)getActivity().findViewById(R.id.linearLayout_phone_main);
         loadView();
+        imgbtn_hangup =(Button)getActivity().findViewById(R.id.imgbtn_hang_up_phone);
+		imgbtn_hangup.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				if(mTvInfo != null){
+					mTvInfo.setText("Ending the call...");
+				}
+				hangUpCall();
+				if(mViewLocalVideoPreview != null){
+					mViewLocalVideoPreview.removeAllViews();
+				}
+				((ScreenHome)getActivity()).setTabSelection(ScreenHome.HOME_INTENT_FLAG);
+			}
+		});
 	}
 
 
