@@ -74,7 +74,6 @@
         android:layout_below="@+id/view_call_incall_audio_textView_remote"
         android:layout_margin="3px"
         android:gravity="center_horizontal"
-        android:visibility="gone"
         android:weightSum="2" >
 
         <ImageButton

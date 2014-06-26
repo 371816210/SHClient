@@ -14,7 +14,7 @@ import android.widget.ImageView;
 
 public class VideoFragment extends Fragment {
 	
-	private ImageView mTwoWayVideo;
+	private ImageView mTwoWayVideo,  mAudioButton;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -35,6 +35,18 @@ public class VideoFragment extends Fragment {
 				// TODO Auto-generated method stub
 				//((ScreenHome)getActivity()).setTabSelection(ScreenHome.TWOWAY_INTENT_FLAG);
 				ScreenHome.makeCall(((ScreenHome)getActivity()).mConfigurationService.getString(NgnConfigurationEntry.Devices_SIP_NUMBER, NgnConfigurationEntry.DEFAULT_Devices_SIP_NUMBER), NgnMediaType.AudioVideo);
+			}
+		});
+		
+		
+		mAudioButton = (ImageView) getActivity().findViewById(R.id.twoway_audio_butt);
+		mAudioButton.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				//((ScreenHome)getActivity()).setTabSelection(ScreenHome.TWOWAY_INTENT_FLAG);
+				ScreenHome.makeCall(((ScreenHome)getActivity()).mConfigurationService.getString(NgnConfigurationEntry.Devices_SIP_NUMBER, NgnConfigurationEntry.DEFAULT_Devices_SIP_NUMBER), NgnMediaType.Audio);
 			}
 		});
 	}
