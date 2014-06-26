@@ -159,18 +159,6 @@ public class TwowayVideoFragment extends Fragment {
 			
 		mMainLayout = (LinearLayout)getActivity().findViewById(R.id.linearLayout_main);
         loadView();
-        /*imgbtn_hangup =(Button)getActivity().findViewById(R.id.imgbtn_hang_up_phone);
-		imgbtn_hangup.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				if(mTvInfo != null){
-					mTvInfo.setText("Ending the call...");
-				}
-				hangUpCall();
-			}
-		});*/
 	}
 
 
@@ -814,6 +802,21 @@ public class TwowayVideoFragment extends Fragment {
 				mViewLocalVideoPreview = (LinearLayout)mViewInCallVideo.findViewById(R.id.view_call_incall_video_FrameLayout_local_video);
 				mViewRemoteVideoPreview = (LinearLayout)mViewInCallVideo.findViewById(R.id.view_call_incall_video_FrameLayout_remote_video);
 			}
+			
+			
+			imgbtn_hangup =(Button)mViewInCallVideo.findViewById(R.id.imgbtn_hang_up_phone);
+			imgbtn_hangup.setOnClickListener(new OnClickListener() {
+				
+				@Override
+				public void onClick(View v) {
+					// TODO Auto-generated method stub
+					if(mTvInfo != null){
+						mTvInfo.setText("Ending the call...");
+					}
+					hangUpCall();
+				}
+			});
+			
 			if(mTvDuration != null){
 				synchronized(mTvDuration){
 			        mTvDuration = null;
