@@ -58,7 +58,6 @@
         android:layout_marginRight="3px"
         android:layout_marginTop="10px"
         android:gravity="center_horizontal"
-        android:visibility="gone"
         android:weightSum="6" >
 
         <ImageButton
