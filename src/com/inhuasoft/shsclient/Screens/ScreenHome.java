@@ -24,6 +24,7 @@ import com.inhuasoft.shsclient.Engine;
 import com.inhuasoft.shsclient.Main;
 import com.inhuasoft.shsclient.R;
 import com.inhuasoft.shsclient.Services.IScreenService;
+import com.inhuasoft.shsclient.widgets.MenubarView;
 
 import org.doubango.ngn.events.NgnEventArgs;
 import org.doubango.ngn.events.NgnRegistrationEventArgs;
@@ -70,15 +71,15 @@ public class ScreenHome extends BaseScreen  implements OnClickListener{
 	public static final int PHOTO_INTENT_FLAG = TWOWAY_INTENT_FLAG + 1;
 	public static final int RECORD_INTENT_FLAG = PHOTO_INTENT_FLAG + 1;
 	
-	private LinearLayout mHomeLayout;
-	private LinearLayout mVideoLayout;
-	private LinearLayout mSwitchLayout;
-	private LinearLayout mControlLayout;
-	private LinearLayout mMoreLayout;
-	private ImageView mVideoImageView;
-	private ImageView mHomeImageView;
-	private TextView mVideoTextView;
-	private TextView mHomeTextView;
+	private MenubarView mHomeLayout;
+	private MenubarView mVideoLayout;
+	private MenubarView mSwitchLayout;
+	private MenubarView mControlLayout;
+	private MenubarView mMoreLayout;
+//	private ImageView mVideoImageView;
+//	private ImageView mHomeImageView;
+//	private TextView mVideoTextView;
+//	private TextView mHomeTextView;
 
 	private FragmentManager mFragmentManager;
 
@@ -127,22 +128,22 @@ public class ScreenHome extends BaseScreen  implements OnClickListener{
 
 	private void initViews() {
 		// TODO Auto-generated method stub
-		mHomeLayout = (LinearLayout) findViewById(R.id.home_layout);
+		mHomeLayout = (MenubarView) findViewById(R.id.home_layout);
 		mHomeLayout.setOnClickListener(this);
-		mVideoLayout = (LinearLayout) findViewById(R.id.video_layout);
+		mVideoLayout = (MenubarView) findViewById(R.id.video_layout);
 		mVideoLayout.setOnClickListener(this);
-		mSwitchLayout = (LinearLayout) findViewById(R.id.switch_layout);
+		mSwitchLayout = (MenubarView) findViewById(R.id.switch_layout);
 		mSwitchLayout.setOnClickListener(this);
-		mControlLayout = (LinearLayout) findViewById(R.id.control_layout);
+		mControlLayout = (MenubarView) findViewById(R.id.control_layout);
 		mControlLayout.setOnClickListener(this);
-		mMoreLayout = (LinearLayout) findViewById(R.id.more_layout);
+		mMoreLayout = (MenubarView) findViewById(R.id.more_layout);
 		mMoreLayout.setOnClickListener(this);
 		
-		mVideoImageView = (ImageView) findViewById(R.id.video_image);
-		mVideoTextView = (TextView) findViewById(R.id.video_text);
+//		mVideoImageView = (ImageView) findViewById(R.id.video_image);
+//		mVideoTextView = (TextView) findViewById(R.id.video_text);
 		
-		mHomeImageView = (ImageView) findViewById(R.id.home_image);
-		mHomeTextView = (TextView) findViewById(R.id.home_text);
+//		mHomeImageView = (ImageView) findViewById(R.id.home_image);
+//		mHomeTextView = (TextView) findViewById(R.id.home_text);
 
 	}
 	
@@ -241,9 +242,10 @@ public class ScreenHome extends BaseScreen  implements OnClickListener{
 		switch (index) {
 		case HOME_INTENT_FLAG:
 			clearSelection();
-			mHomeLayout.setBackgroundResource(R.drawable.ic_home_bottom_bar_bg);
-			mHomeImageView.setSelected(true);
-			mHomeTextView.setTextColor(getTextColor(R.color.orange));
+//			mHomeLayout.setBackgroundResource(R.drawable.ic_home_bottom_bar_bg);
+//			mHomeImageView.setSelected(true);
+//			mHomeTextView.setTextColor(getTextColor(R.color.orange));
+			mHomeLayout.setSelected(true);
 			if(mHomeFragment == null) {
 				mHomeFragment = new HomeFragment();
 				transaction.add(R.id.main_content, mHomeFragment);
@@ -253,9 +255,10 @@ public class ScreenHome extends BaseScreen  implements OnClickListener{
 			break;
 		case VIDEO_INTENT_FLAG:
 			clearSelection();
-			mVideoLayout.setBackgroundResource(R.drawable.ic_home_bottom_bar_bg);
-			mVideoImageView.setSelected(true);
-			mVideoTextView.setTextColor(getTextColor(R.color.orange));
+//			mVideoLayout.setBackgroundResource(R.drawable.ic_home_bottom_bar_bg);
+//			mVideoImageView.setSelected(true);
+//			mVideoTextView.setTextColor(getTextColor(R.color.orange));
+			mVideoLayout.setSelected(true);
 			if(mVideoFragment == null) {
 				mVideoFragment = new VideoFragment();
 				transaction.add(R.id.main_content, mVideoFragment);
@@ -325,15 +328,19 @@ public class ScreenHome extends BaseScreen  implements OnClickListener{
 
 	private void clearSelection() {
 		// TODO Auto-generated method stub
-		mHomeLayout.setBackgroundDrawable(null);
-		mHomeImageView.setSelected(false);
-		mVideoImageView.setSelected(false);
-		mHomeTextView.setTextColor(getResources().getColor(R.color.black));
-		mVideoTextView.setTextColor(getResources().getColor(R.color.black));
-		mVideoLayout.setBackgroundDrawable(null);
-		mSwitchLayout.setBackgroundDrawable(null);
-		mControlLayout.setBackgroundDrawable(null);
-		mMoreLayout.setBackgroundDrawable(null);
+//		mHomeLayout.setBackgroundDrawable(null);
+//		mHomeImageView.setSelected(false);
+//		mVideoImageView.setSelected(false);
+//		mHomeTextView.setTextColor(getResources().getColor(R.color.black));
+//		mVideoTextView.setTextColor(getResources().getColor(R.color.black));
+//		mVideoLayout.setBackgroundDrawable(null);
+//		mSwitchLayout.setBackgroundDrawable(null);
+//		mControlLayout.setBackgroundDrawable(null);
+		mHomeLayout.setSelected(false);
+		mVideoLayout.setSelected(false);
+		mSwitchLayout.setSelected(false);
+		mControlLayout.setSelected(false);
+		mMoreLayout.setSelected(false);
 	}
 
 	/**

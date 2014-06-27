@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:inhua="http://schemas.android.com/apk/res/com.inhuasoft.shsclient"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
@@ -26,6 +27,7 @@
         android:background="@color/home_title_bg"
         android:orientation="horizontal" >
 
+        <!--
         <LinearLayout
             android:id="@id/home_layout"
             android:layout_width="0.0dip"
@@ -52,7 +54,7 @@
                 android:textColor="@color/orange"
                 android:textSize="10.0sp" />
         </LinearLayout>
-
+        
         <LinearLayout
             android:id="@id/video_layout"
             android:layout_width="0.0dip"
@@ -102,7 +104,7 @@
                 android:textColor="@color/black"
                 android:textSize="10.0sp" />
         </LinearLayout>
-
+	
         <LinearLayout
             android:id="@id/control_layout"
             android:layout_width="0.0dip"
@@ -126,7 +128,6 @@
                 android:textColor="@color/black"
                 android:textSize="10.0sp" />
         </LinearLayout>
-
         <LinearLayout
             android:id="@id/more_layout"
             android:layout_width="0.0dip"
@@ -150,6 +151,55 @@
                 android:textColor="@color/black"
                 android:textSize="10.0sp" />
         </LinearLayout>
+        -->
+        
+        
+        
+        <com.inhuasoft.shsclient.widgets.MenubarView
+            android:id="@id/home_layout" 
+            android:layout_width="0.0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            inhua:src="@drawable/ic_home_selector"
+            inhua:text="沃家首页" >
+        </com.inhuasoft.shsclient.widgets.MenubarView>
+        
+        <com.inhuasoft.shsclient.widgets.MenubarView
+            android:id="@id/video_layout" 
+            android:layout_width="0.0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            inhua:src="@drawable/ic_video_selector"
+            inhua:text="语音视频" >
+        </com.inhuasoft.shsclient.widgets.MenubarView>
+        
+        <com.inhuasoft.shsclient.widgets.MenubarView
+            android:id="@id/switch_layout" 
+            android:layout_width="0.0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            inhua:src="@drawable/ic_home_switchicon"
+            inhua:text="开关插座" >
+        </com.inhuasoft.shsclient.widgets.MenubarView>
+        
+        <com.inhuasoft.shsclient.widgets.MenubarView
+            android:id="@id/more_layout" 
+            android:layout_width="0.0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            inhua:src="@drawable/ic_home_moreicon"
+            inhua:text="更多" >
+
+            <com.inhuasoft.shsclient.widgets.MenubarView
+                android:id="@id/control_layout"
+                android:layout_width="0.0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                inhua:src="@drawable/ic_home_controlicon"
+                inhua:text="红外遥控" >
+            </com.inhuasoft.shsclient.widgets.MenubarView>
+
+        </com.inhuasoft.shsclient.widgets.MenubarView>
     </LinearLayout>
 
 </LinearLayout>
