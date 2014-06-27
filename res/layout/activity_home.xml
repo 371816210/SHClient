@@ -196,7 +196,7 @@
             android:layout_width="0.0dip"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            inhua:src="@drawable/ic_home_moreicon"
+            inhua:src="@drawable/ic_more_selector"
             inhua:text="更多" >
             </com.inhuasoft.shsclient.widgets.MenubarView>
 

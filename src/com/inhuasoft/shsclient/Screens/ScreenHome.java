@@ -87,6 +87,7 @@ public class ScreenHome extends BaseScreen  implements OnClickListener{
 	private VideoFragment mVideoFragment;
 	private SwitchFragment mSwitchFragment;
 	private ControlFragment mControlFragment;
+	private MoreFragment mMoreFragment;
 	private TwowayVideoFragment mTwowayVideoFragment;
 	
 	
@@ -223,7 +224,7 @@ public class ScreenHome extends BaseScreen  implements OnClickListener{
 			setTabSelection(CONTROL_INTENT_FLAG);
 			break;
 		case R.id.more_layout:
-
+			setTabSelection(MORE_INTENT_FLAG);
 			break;
 
 		default:
@@ -287,6 +288,17 @@ public class ScreenHome extends BaseScreen  implements OnClickListener{
 				transaction.add(R.id.main_content, mControlFragment);
 			} else {
 				transaction.show(mControlFragment);
+			}
+			break;
+			
+		case MORE_INTENT_FLAG:
+			clearSelection();
+			mMoreLayout.setSelected(true);
+			if(mMoreFragment == null) {
+				mMoreFragment = new MoreFragment();
+				transaction.add(R.id.main_content, mMoreFragment);
+			} else {
+				transaction.show(mMoreFragment);
 			}
 			break;
 			
@@ -385,6 +397,9 @@ public class ScreenHome extends BaseScreen  implements OnClickListener{
 		}
 		if (mControlFragment != null) {
 			transaction.hide(mControlFragment);
+		}
+		if (mMoreFragment != null) {
+			transaction.hide(mMoreFragment);
 		}
 		if(mTwowayVideoFragment != null) {
 			transaction.hide(mTwowayVideoFragment);

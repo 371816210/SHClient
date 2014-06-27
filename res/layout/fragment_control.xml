@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center_horizontal"
     android:orientation="vertical" >
 
     <LinearLayout
@@ -31,133 +32,141 @@
             android:background="@drawable/ic_video_setting" />
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <TableLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:padding="10.0dip" >
+        android:layout_margin="40.0dip" >
 
-        <ImageButton
-            android:layout_width="wrap_content"
+        <TableRow
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginRight="10.0dip"
-            android:background="@drawable/ic_switch_switch" />
+            android:orientation="horizontal" >
 
-        <LinearLayout
-            android:layout_width="0.0dip"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical" >
-
-            <TextView
+            <FrameLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="智能开关"
-                android:textSize="15.0sp"
-                android:textStyle="bold" />
+                android:orientation="vertical" >
 
-            <TextView
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_control_tv" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|bottom"
+                    android:layout_marginBottom="10.0dip"
+                    android:text="电视" />
+            </FrameLayout>
+
+            <FrameLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5.0dip"
-                android:text="下午  7:35 已开"
-                android:textSize="12.0sp" />
-        </LinearLayout>
+                android:layout_marginLeft="20.0dip"
+                android:orientation="vertical" >
 
-        <ToggleButton
-            android:layout_width="wrap_content"
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_control_fan" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|bottom"
+                    android:layout_marginBottom="10.0dip"
+                    android:text="风扇" />
+            </FrameLayout>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/ic_toggle_selector"
-            android:checked="true"
-            android:textOff=""
-            android:textOn="" />
-    </LinearLayout>
+            android:layout_marginTop="30.0dip"
+            android:orientation="horizontal" >
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:padding="10.0dip" >
-
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="10.0dip"
-            android:background="@drawable/ic_switch_light" />
-
-        <LinearLayout
-            android:layout_width="0.0dip"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical" >
-
-            <TextView
+            <FrameLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="客厅大灯"
-                android:textSize="15.0sp"
-                android:textStyle="bold" />
+                android:orientation="vertical" >
 
-            <TextView
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_control_aircon" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|bottom"
+                    android:layout_marginBottom="10.0dip"
+                    android:text="空调" />
+            </FrameLayout>
+
+            <FrameLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5.0dip"
-                android:text="未开"
-                android:textSize="12.0sp" />
-        </LinearLayout>
+                android:layout_marginLeft="20.0dip"
+                android:orientation="vertical" >
 
-        <ToggleButton
-            android:layout_width="wrap_content"
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_control_icebox" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|bottom"
+                    android:layout_marginBottom="10.0dip"
+                    android:text="电冰箱" />
+            </FrameLayout>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/ic_toggle_selector"
-            android:checked="false"
-            android:textOff=""
-            android:textOn="" />
-    </LinearLayout>
+            android:layout_marginTop="30.0dip"
+            android:orientation="horizontal" >
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:padding="10.0dip" >
-
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="10.0dip"
-            android:background="@drawable/ic_switch_switch" />
-
-        <LinearLayout
-            android:layout_width="0.0dip"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical" >
-
-            <TextView
+            <FrameLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="客厅风扇"
-                android:textSize="15.0sp"
-                android:textStyle="bold" />
+                android:orientation="vertical" >
 
-            <TextView
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_control_washer" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|bottom"
+                    android:layout_marginBottom="10.0dip"
+                    android:text="洗衣机" />
+            </FrameLayout>
+
+            <FrameLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5.0dip"
-                android:text="未开"
-                android:textSize="12.0sp" />
-        </LinearLayout>
+                android:layout_marginLeft="20.0dip"
+                android:orientation="vertical" >
 
-        <ToggleButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/ic_toggle_selector"
-            android:checked="false"
-            android:textOff=""
-            android:textOn="" />
-    </LinearLayout>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_control_add" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|bottom"
+                    android:layout_marginBottom="10.0dip"
+                    android:text="自定义添加" />
+            </FrameLayout>
+        </TableRow>
+    </TableLayout>
 
 </LinearLayout>
