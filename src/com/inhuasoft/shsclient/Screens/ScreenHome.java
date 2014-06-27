@@ -85,6 +85,8 @@ public class ScreenHome extends BaseScreen  implements OnClickListener{
 
 	private HomeFragment mHomeFragment;
 	private VideoFragment mVideoFragment;
+	private SwitchFragment mSwitchFragment;
+	private ControlFragment mControlFragment;
 	private TwowayVideoFragment mTwowayVideoFragment;
 	
 	
@@ -215,10 +217,10 @@ public class ScreenHome extends BaseScreen  implements OnClickListener{
 			setTabSelection(VIDEO_INTENT_FLAG);
 			break;
 		case R.id.switch_layout:
-
+			setTabSelection(SWITCH_INTENT_FLAG);
 			break;
 		case R.id.control_layout:
-
+			setTabSelection(CONTROL_INTENT_FLAG);
 			break;
 		case R.id.more_layout:
 
@@ -266,6 +268,28 @@ public class ScreenHome extends BaseScreen  implements OnClickListener{
 				transaction.show(mVideoFragment);
 			}
 			break;
+		case SWITCH_INTENT_FLAG:
+			clearSelection();
+			mSwitchLayout.setSelected(true);
+			if(mSwitchFragment == null) {
+				mSwitchFragment = new SwitchFragment();
+				transaction.add(R.id.main_content, mSwitchFragment);
+			} else {
+				transaction.show(mSwitchFragment);
+			}
+			break;
+			
+		case CONTROL_INTENT_FLAG:
+			clearSelection();
+			mControlLayout.setSelected(true);
+			if(mControlFragment == null) {
+				mControlFragment = new ControlFragment();
+				transaction.add(R.id.main_content, mControlFragment);
+			} else {
+				transaction.show(mControlFragment);
+			}
+			break;
+			
 		case TWOWAY_INTENT_FLAG:
 			if(mTwowayVideoFragment == null) {
 				mTwowayVideoFragment = new TwowayVideoFragment();
@@ -355,6 +379,12 @@ public class ScreenHome extends BaseScreen  implements OnClickListener{
 		}
 		if (mHomeFragment != null) {
 			transaction.hide(mHomeFragment);
+		}
+		if (mSwitchFragment != null) {
+			transaction.hide(mSwitchFragment);
+		}
+		if (mControlFragment != null) {
+			transaction.hide(mControlFragment);
 		}
 		if(mTwowayVideoFragment != null) {
 			transaction.hide(mTwowayVideoFragment);

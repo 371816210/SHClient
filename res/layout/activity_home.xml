@@ -178,10 +178,19 @@
             android:layout_width="0.0dip"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            inhua:src="@drawable/ic_home_switchicon"
+            inhua:src="@drawable/ic_switch_selector"
             inhua:text="开关插座" >
         </com.inhuasoft.shsclient.widgets.MenubarView>
         
+        <com.inhuasoft.shsclient.widgets.MenubarView
+            android:id="@id/control_layout" 
+            android:layout_width="0.0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            inhua:src="@drawable/ic_control_selector"
+            inhua:text="红外遥控" >
+        </com.inhuasoft.shsclient.widgets.MenubarView>
+
         <com.inhuasoft.shsclient.widgets.MenubarView
             android:id="@id/more_layout" 
             android:layout_width="0.0dip"
@@ -189,17 +198,9 @@
             android:layout_weight="1"
             inhua:src="@drawable/ic_home_moreicon"
             inhua:text="更多" >
-
-            <com.inhuasoft.shsclient.widgets.MenubarView
-                android:id="@id/control_layout"
-                android:layout_width="0.0dip"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                inhua:src="@drawable/ic_home_controlicon"
-                inhua:text="红外遥控" >
             </com.inhuasoft.shsclient.widgets.MenubarView>
 
-        </com.inhuasoft.shsclient.widgets.MenubarView>
+        
     </LinearLayout>
 
 </LinearLayout>
